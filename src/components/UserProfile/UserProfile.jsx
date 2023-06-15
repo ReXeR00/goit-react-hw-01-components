@@ -1,4 +1,4 @@
-import React from 'react';
+
 import PropTypes from 'prop-types';
 import Zlatan from './Zlatan.png';
 import css from './UserProfile.module.css';
@@ -8,7 +8,7 @@ export default function UserProfile ({
   tag,
   location,
   avatar = Zlatan,
-  stats: { followers, views, likes },
+  stats: { followers = 0, views = 0, likes = 0 } = {},
 }) {
   return (
     <div className={css.profile}>
@@ -20,15 +20,15 @@ export default function UserProfile ({
       </div>
 
       <ul className={css.stats}>
-        <li>
+        <li className={css.list}>
           <span className={css.label}>Followers</span>
           <span className={css.quantity}>{followers}</span>
         </li>
-        <li>
+        <li className={css.list}>
           <span className={css.label}>Views</span>
           <span className={css.quantity}>{views}</span>
         </li>
-        <li>
+        <li className={css.list}>
           <span className={css.label}>Likes</span>
           <span className={css.quantity}>{likes}</span>
         </li>

@@ -1,7 +1,9 @@
-import css from './Section.modules.css';
-import PropTypes from 'prop-types';
 
-export default function Section (title, children)  {
+import PropTypes from "prop-types";
+import css from "./Section.module.css";
+
+
+export default function Section({ title, children }) {
   return (
     <section className={css.section}>
       <div className={css.container}>
@@ -10,7 +12,7 @@ export default function Section (title, children)  {
       </div>
     </section>
   );
-};
+}
 
 Section.prototype = {
   title: PropTypes.string,
